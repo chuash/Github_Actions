@@ -1,13 +1,18 @@
 # Import relevant libraries
 import logging, os, time
+from dotenv import load_dotenv
 from datetime import datetime, timedelta
+
+# Load environment variables
+if not load_dotenv(".env"):
+    pass
 
 # Define variables
 tempscrappedfolder = 'temp_scraped_data'    # Set the folder name used to temporarily store scrapped data
 WIPfolder = 'temp' # Set the folder name used to hold temporary files
 tablename = 'news'    # Set the base tablename for the sqlite database table used to store web scrapped data 
 dbfolder = 'database'
-scrapped_from_date = os.getenv("scrapped_from_date")     # Set the date from which news are to be scrapped, in the format day month year, e.g. 01 Jan 2025 or None
+scrapped_from_date = os.getenv("SCRAPPED_FROM_DATE")     # Set the date from which news are to be scrapped, in the format day month year, e.g. 01 Jan 2025 or None
                            
 
 # Set up custom exception class
