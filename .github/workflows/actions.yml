@@ -3,6 +3,8 @@ name: run News_collector.py
 on:
   schedule:
     - cron: '0 9 * * *' # At 09:00 every day
+    
+  workflow_dispatch:
 
 permissions:                    # Global permissions configuration starts here
   contents: read                # 'read' access to repository contents
