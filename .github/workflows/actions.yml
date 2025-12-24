@@ -28,7 +28,7 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          SOME_SECRET: ${{ secrets.SOME_SECRET }}
+          scrapped_from_date: ${{ secrets.SCRAPPED_FROM_DATE }}
         run: python News_collector.py
           
       - name: commit files
