@@ -18,7 +18,9 @@ jobs:
       - name: my_step
         env:
           scrapped_from_date: ${{ secrets.SCRAPPED_FROM_DATE }}
-        run: echo "Hello World"
+        run: |
+          echo "Hello World, date is $scrapped_from_date"
+          echo "The repository is: $GITHUB_REPOSITORY"
 
       # - name: checkout repository content
       #   uses: actions/checkout@v4 # checkout the repository content to github runner
