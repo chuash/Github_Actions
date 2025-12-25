@@ -44,7 +44,7 @@ jobs:
           
       - name: Execute py script 
         env:
-          scrapped_from_date: ${{ secrets.SCRAPPED_FROM_DATE }}
+          SCRAPPED_FROM_DATE: ${{ secrets.SCRAPPED_FROM_DATE }}
         run: python News_collector.py
           
       - name: Commit and push changes
