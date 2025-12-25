@@ -8,7 +8,7 @@ __pycache__/
 *.ipynb
 
 # Others
-*.csv
+#*.csv
 *.png
 *.env
 *.log
