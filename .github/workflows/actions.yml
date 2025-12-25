@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:                    # Global permissions configuration starts here
-  contents: read                # 'read' access to repository contents
+  contents: write                # 'read' access to repository contents
   pull-requests: write          # 'write' access to pull requests
 
 jobs:
@@ -22,6 +22,9 @@ jobs:
           echo "Hello World, date is $scrapped_from_date"
           echo "The repository is: $GITHUB_REPOSITORY"
           echo "The ref is : $GITHUB_REF, ${{ github.ref }}"
+          echo "The repository is: $GITHUB_REPOSITORY"
+          echo "The commit SHA is: $GITHUB_SHA"
+          echo "The actor is: $GITHUB_ACTOR"
 
       - name: Checkout repository
         uses: actions/checkout@v4 # Action to access repo files
