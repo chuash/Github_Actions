@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "Hello World, date is $scrapped_from_date"
           echo "The repository is: $GITHUB_REPOSITORY"
+          echo "The ref is : $GITHUB_REF, ${{ github.ref }}"
 
       # - name: checkout repository content
       #   uses: actions/checkout@v4 # checkout the repository content to github runner
