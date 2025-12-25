@@ -82,9 +82,9 @@ def get_ACCC_press_release(fromdate: str, folder:str,  user_agents:List[str]=_us
             df.to_csv(os.path.join(folder,f'ACCC_from_{fromdate}.csv'), index=False)
             # Update log upon successful scraping
             logger.info(f"Media releases dated from '{fromdate}' successfully downloaded from ACCC")
-
-            return df
         
+        #return df
+
     except requests.exceptions.ConnectionError as e:
         raise MyError(f"ACCC Scraper - Network connection error: {e}")
     except requests.exceptions.Timeout as e:

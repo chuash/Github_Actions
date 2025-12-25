@@ -21,27 +21,27 @@ if __name__ == "__main__":
     try:
         # 1): Extract news articles from relevant sources
         # a) Extracting news articles from ACCC
-        df = ACCC_scrapper.get_ACCC_press_release(fromdate = date, folder=tempscrappedfolder)
+        ACCC_scrapper.get_ACCC_press_release(fromdate = date, folder=tempscrappedfolder)
         
         # b) Extracting news articles from X
         # Scrapper for X to be called here. To augment with scrappers for other sources
 
         #Establish connection to database 
-        conn = sqlite3.connect(f'{dbfolder}/data.db')
-        cursor = conn.cursor()
+         #conn = sqlite3.connect(f'{dbfolder}/data.db')
+         #cursor = conn.cursor()
         # Save to database
-        df.to_sql(f'{tablename}', con=conn, if_exists='append', index=False)
+         #df.to_sql(f'{tablename}', con=conn, if_exists='append', index=False)
         
     except MyError as e:
         logger.error(f"{e}")
-    except sqlite3.Error as e:
-        logger.error(f"Database connection error while executing {os.path.basename(__file__)}: {e}")
+     #except sqlite3.Error as e:
+        #logger.error(f"Database connection error while executing {os.path.basename(__file__)}: {e}")
     except (Exception, BaseException) as e:
         logger.error(f"General error while executing {os.path.basename(__file__)} : {e}")
     
-    finally:
+    #finally:
     # Ensure the database connection is closed
-        if conn:
-            conn.close()
-            logger.info('SQLite Connection closed')
+        #if conn:
+            #conn.close()
+            #logger.info('SQLite Connection closed')
 
