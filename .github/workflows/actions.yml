@@ -2,7 +2,7 @@ name: run News_collector.py
 
 on:
   schedule:
-    - cron: '0 1 * * *' # At 01:00 UTC or SGT 09:00 every day
+    - cron: '0 0 * * *' # At 00:00 UTC or SGT 08:00 every day
     
   workflow_dispatch:
 
