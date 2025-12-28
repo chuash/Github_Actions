@@ -9,7 +9,8 @@ from scrapers import ACCC_scrapper
 # Set up the shared logger
 logger = setup_shared_logger()
 
-date = set_collection_date(date=scrapped_from_date)
+#date = set_collection_date(date=scrapped_from_date)
+date = set_collection_date()
 
 # Create folder used to temporarily store scrapped data, if it does't exist
 Path(tempscrappedfolder).mkdir(parents=True, exist_ok=True)
